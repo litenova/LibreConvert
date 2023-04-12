@@ -1,0 +1,15 @@
+<Project>
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <Description>A Simple, Straightforward, and Fully Managed C# Library to Convert Office Documents to Various Formats with LibreOffice</Description>
+        <PackageProjectUrl>https://github.com/litenova/LibreConvert</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/litenova/LibreConvert</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+</Project>

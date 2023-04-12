@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CAA3F9A1-B846-4E1A-A87F-1DB5E86C206D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B11B85F4-6940-40D5-AE10-15B75AACA7CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreConvert", "src\LibreConvert\LibreConvert.csproj", "{6E2FAB7F-6983-408D-97F6-7DAE76C04029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreConvert.ConsoleApp", "src\LibreConvert.ConsoleApp\LibreConvert.ConsoleApp.csproj", "{5CF32F85-B6D3-421E-AB34-7CF34D01451D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{638D9306-F4BD-4886-8289-08DD13DC20E2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E2FAB7F-6983-408D-97F6-7DAE76C04029} = {CAA3F9A1-B846-4E1A-A87F-1DB5E86C206D}
+		{5CF32F85-B6D3-421E-AB34-7CF34D01451D} = {CAA3F9A1-B846-4E1A-A87F-1DB5E86C206D}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF32F85-B6D3-421E-AB34-7CF34D01451D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF32F85-B6D3-421E-AB34-7CF34D01451D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF32F85-B6D3-421E-AB34-7CF34D01451D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF32F85-B6D3-421E-AB34-7CF34D01451D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
