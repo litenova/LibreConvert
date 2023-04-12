@@ -3,13 +3,24 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <VersionPrefix>0.1.0</VersionPrefix>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <Authors>M. Shafie</Authors>
+        <PackageTags>libreoffice;word-to-pdf;excel-to-pdf;powerpoint-to-pdf</PackageTags>
+        <VersionPrefix>1.0.0-alpha.1</VersionPrefix>
+        <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(SolutionDir)\Release-Notes.txt"))</PackageReleaseNotes>
+        <PackageIcon>logo-128x128.png</PackageIcon>
         <Description>A Simple, Straightforward, and Fully Managed C# Library to Convert Office Documents to Various Formats with LibreOffice</Description>
         <PackageProjectUrl>https://github.com/litenova/LibreConvert</PackageProjectUrl>
         <RepositoryUrl>https://github.com/litenova/LibreConvert</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
+
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\assets\logos\logo-128x128.png" Pack="true" PackagePath=""/>
+        <InternalsVisibleTo Include="LibreConvert.UnitTests"/>
+    </ItemGroup>
 
 </Project>

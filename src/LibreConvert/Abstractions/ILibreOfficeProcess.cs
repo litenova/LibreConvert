@@ -1,6 +1,3 @@
-using LibreConvert.Internal;
-using LibreConvert.Internal.Process;
-
 namespace LibreConvert.Abstractions;
 
 /// <summary>
@@ -17,8 +14,8 @@ public interface ILibreOfficeProcess : IDisposable
     /// Executes a command asynchronously with the specified command line arguments.
     /// </summary>
     /// <param name="argumentBuilderAction">An action to be performed on the <see cref="ICommandLineArgumentsBuilder"/> interface
-    /// to build the command line arguments.</param>
-    /// <returns>A task representing the asynchronous operation, which returns an <see cref="ExecutionResult"/> object containing
+    ///     to build the command line arguments.</param>
+    /// <returns>A task representing the asynchronous operation, which returns an <see cref="IExecutionResult"/> object containing
     /// the result of the execution.</returns>
-    Task<ExecutionResult> ExecuteAsync(Action<ICommandLineArgumentsBuilder> argumentBuilderAction);
+    Task<IExecutionResult> ExecuteAsync(Action<ICommandLineArgumentsBuilder> argumentBuilderAction);
 }

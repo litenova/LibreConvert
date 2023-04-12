@@ -11,12 +11,14 @@ internal class CommandLineArgumentsBuilder : ICommandLineArgumentsBuilder
         return Add(argument, string.Empty);
     }
 
-    public ICommandLineArgumentsBuilder Add(string argument, string value)
+    public ICommandLineArgumentsBuilder Add(string argument, string value, bool wrapValueInQuotes = false)
     {
         if (string.IsNullOrEmpty(argument))
         {
             throw new ArgumentException("Argument cannot be null or empty", nameof(argument));
         }
+
+        value = wrapValueInQuotes ? $"\"{value}\"" : value;
 
         _arguments.Add(string.IsNullOrEmpty(value) ? argument : $"{argument} {value}");
 

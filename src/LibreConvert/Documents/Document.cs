@@ -1,12 +1,8 @@
-﻿
-namespace LibreConvert.Documents;
+﻿namespace LibreConvert.Documents;
 
+/// <summary>
+/// Represents a document in LibreOffice.
+/// </summary>
 public abstract class Document
 {
-    /// <summary>
-    ///     Exports the document to a PDF file
-    /// </summary>
-    /// <param name="outputDirectory"></param>
-    /// <returns></returns>
-    public abstract Task ExportAsync(string outputDirectory);
 }

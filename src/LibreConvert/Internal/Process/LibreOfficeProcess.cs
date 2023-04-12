@@ -5,12 +5,15 @@ using LibreConvert.Settings;
 
 namespace LibreConvert.Internal.Process;
 
+/// <summary>
+/// Represents a LibreOffice process used for executing document conversions.
+/// </summary>
 internal class LibreOfficeProcess : ILibreOfficeProcess
 {
     private readonly System.Diagnostics.Process _libreOfficeProcess;
 
     /// <summary>
-    ///     Returns the full path to LibreOffice, when not found <c>null</c> is returned
+    /// Initializes a new instance of the <see cref="LibreOfficeProcess"/> class with default settings.
     /// </summary>
     internal LibreOfficeProcess()
     {
@@ -27,7 +30,8 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
         };
     }
 
-    public async Task<ExecutionResult> ExecuteAsync(Action<ICommandLineArgumentsBuilder> argumentBuilderAction)
+    /// <inheritdoc/>
+    public async Task<IExecutionResult> ExecuteAsync(Action<ICommandLineArgumentsBuilder> argumentBuilderAction)
     {
         CommandLineArgumentsBuilder argumentBuilder = new();
 
@@ -72,11 +76,26 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
 
         var output = await _libreOfficeProcess.StandardOutput.ReadToEndAsync();
 
+        var error = await _libreOfficeProcess.StandardError.ReadToEndAsync();
+
         await _libreOfficeProcess.WaitForExitAsync();
 
-        return new ExecutionResult(_libreOfficeProcess.ExitCode, output);
+        var exitCode = _libreOfficeProcess.ExitCode;
+
+        // Set the error message if the process returned an error
+        string? errorMessage = null;
+        if (exitCode != 0)
+        {
+            errorMessage = error;
+        }
+
+        // Create a new ExecutionResult object with the exit code, output, and error message (if any)
+        var executionResult = new ExecutionResult(exitCode, output, _libreOfficeProcess.StartInfo.Arguments, errorMessage);
+
+        return executionResult;
     }
 
+    /// <inheritdoc/>
     public void Dispose()
     {
         _libreOfficeProcess.Dispose();

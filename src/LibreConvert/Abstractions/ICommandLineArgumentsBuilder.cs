@@ -1,6 +1,4 @@
-﻿using LibreConvert.Internal;
-
-namespace LibreConvert.Abstractions;
+﻿namespace LibreConvert.Abstractions;
 
 /// <summary>
 /// Represents an interface for building command line arguments with the ability to add, remove, and clear arguments,
@@ -16,12 +14,13 @@ public interface ICommandLineArgumentsBuilder
     ICommandLineArgumentsBuilder Add(string argument);
 
     /// <summary>
-    /// Adds an argument and its value to the builder.
+    /// Adds an argument and its value to the builder, with the option to wrap the value in quotes.
     /// </summary>
     /// <param name="argument">The argument to be added.</param>
     /// <param name="value">The value of the argument.</param>
+    /// <param name="wrapValueInQuotes">Specifies whether to wrap the value in quotes. Defaults to <c>false</c>.</param>
     /// <returns>A reference to this instance of the <see cref="ICommandLineArgumentsBuilder"/> interface.</returns>
-    ICommandLineArgumentsBuilder Add(string argument, string value);
+    ICommandLineArgumentsBuilder Add(string argument, string value, bool wrapValueInQuotes = false);
 
     /// <summary>
     /// Removes a previously added argument from the builder.
