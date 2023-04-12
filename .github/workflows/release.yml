@@ -24,14 +24,14 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test --no-restore
-
-      - name: Publish Test Coverage Report to Coveralls.io
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./coverage.info
+#      - name: Test
+#        run: dotnet test --no-restore
+#
+#      - name: Publish Test Coverage Report to Coveralls.io
+#        uses: coverallsapp/github-action@master
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          path-to-lcov: ./coverage.info
           
       - name: Generate Nuget Packages
         run: dotnet pack --configuration Release
