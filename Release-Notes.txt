@@ -1,3 +1,10 @@
-v.0.0.1-alpha.1
+v.1.0.0-alpha.2
+
+⦁ Add overloads for the conversion methods that require no parameters
+⦁ Read and return the error output from the conversion process only if the conversion process fails
+⦁ Return the full path to the converted file from the conversion methods
+⦁ Add basic unit tests
+
+v.1.0.0-alpha.1
 
 ⦁ Add the minimum implementation of document conversion to PDF

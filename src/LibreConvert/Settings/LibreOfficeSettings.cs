@@ -29,11 +29,6 @@ public static class LibreOfficeSettings
     public static bool Headless { get; set; } = true;
 
     /// <summary>
-    /// Gets or sets a value indicating whether the LibreOffice process should be invisible.
-    /// </summary>
-    public static bool Invisible { get; set; } = true;
-
-    /// <summary>
     /// Gets or sets a value indicating whether the LibreOffice process should display the logo during startup.
     /// </summary>
     public static bool NoLogo { get; set; } = true;

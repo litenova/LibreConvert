@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logos", "logos", "{C199C60C
 		assets\logos\logo-512x512.png = assets\logos\logo-512x512.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreConvert.UnitTests", "tests\LibreConvert.UnitTests\LibreConvert.UnitTests.csproj", "{F56BFB21-52DF-43D7-AEC4-4D78F4220246}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,11 +45,16 @@ Global
 		{6E2FAB7F-6983-408D-97F6-7DAE76C04029} = {CAA3F9A1-B846-4E1A-A87F-1DB5E86C206D}
 		{35CD43A3-1E30-4E16-BF21-A0D3DE1855A1} = {0BD07C5F-911A-43E8-BE8A-84E9D12A62C6}
 		{C199C60C-C545-43B7-A59F-D06EB7D555CD} = {9792F6B6-F2F9-4E04-9BB8-8AC93C5992D0}
+		{F56BFB21-52DF-43D7-AEC4-4D78F4220246} = {B11B85F4-6940-40D5-AE10-15B75AACA7CE}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E2FAB7F-6983-408D-97F6-7DAE76C04029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56BFB21-52DF-43D7-AEC4-4D78F4220246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56BFB21-52DF-43D7-AEC4-4D78F4220246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56BFB21-52DF-43D7-AEC4-4D78F4220246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56BFB21-52DF-43D7-AEC4-4D78F4220246}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

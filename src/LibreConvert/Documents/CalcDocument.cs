@@ -14,26 +14,40 @@ namespace LibreConvert.Documents;
 /// </summary>
 public class CalcDocument : Document
 {
-    private readonly string _inputFile;
+    private readonly string _inputFileFullPath;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CalcDocument"/> class with the specified input file.
     /// </summary>
-    /// <param name="inputFile">The path to the input file.</param>
-    public CalcDocument(string inputFile)
+    /// <param name="inputFilePath">The path to the input file.</param>
+    public CalcDocument(string inputFilePath)
     {
-        _inputFile = inputFile;
+        _inputFileFullPath = Path.GetFullPath(inputFilePath);
     }
 
     // ReSharper disable once InconsistentNaming
     /// <summary>
     /// Exports the Calc document to a PDF file.
     /// </summary>
+    /// <returns>A task that represents the asynchronous operation.</returns>
+    public Task<string> ExportAsPDF()
+    {
+        var inputFileDirectory = Path.GetDirectoryName(_inputFileFullPath) ?? throw new InvalidOperationException();
+
+        return ExportAsPDF(inputFileDirectory);
+    }
+    
+    // ReSharper disable once InconsistentNaming
+    /// <summary>
+    /// Exports the Calc document to a PDF file.
+    /// </summary>
     /// <param name="outputDirectory">The path to the output directory.</param>
     /// <returns>A task that represents the asynchronous operation.</returns>
-    public async Task ExportAsPDF(string outputDirectory)
+    public async Task<string> ExportAsPDF(string outputDirectory)
     {
         const string libreOfficeComponent = "pdf:calc_pdf_Export";
+
+        var outputDirectoryFullPath = Path.GetFullPath(outputDirectory);
 
         using var libreOfficeProcess = new LibreOfficeProcess();
 
@@ -41,7 +55,9 @@ public class CalcDocument : Document
         {
             builder.Add($"--convert-to", libreOfficeComponent)
                    .Add("--outdir", outputDirectory, true)
-                   .Add("\"" + _inputFile + "\"");
+                   .Add("\"" + _inputFileFullPath + "\"");
         });
+
+        return Path.Combine(outputDirectoryFullPath, Path.GetFileNameWithoutExtension(_inputFileFullPath) + ".pdf");
     }
 }

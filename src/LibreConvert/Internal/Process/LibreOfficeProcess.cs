@@ -23,9 +23,11 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
         {
             StartInfo = new ProcessStartInfo(installPath)
             {
-                RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
             }
         };
     }
@@ -38,11 +40,6 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
         if (LibreOfficeSettings.Headless)
         {
             argumentBuilder.Add("--headless");
-        }
-
-        if (LibreOfficeSettings.Invisible)
-        {
-            argumentBuilder.Add("--invisible");
         }
 
         if (LibreOfficeSettings.NoLogo)
@@ -76,8 +73,6 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
 
         var output = await _libreOfficeProcess.StandardOutput.ReadToEndAsync();
 
-        var error = await _libreOfficeProcess.StandardError.ReadToEndAsync();
-
         await _libreOfficeProcess.WaitForExitAsync();
 
         var exitCode = _libreOfficeProcess.ExitCode;
@@ -86,7 +81,7 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
         string? errorMessage = null;
         if (exitCode != 0)
         {
-            errorMessage = error;
+            errorMessage = await _libreOfficeProcess.StandardError.ReadToEndAsync();
         }
 
         // Create a new ExecutionResult object with the exit code, output, and error message (if any)
