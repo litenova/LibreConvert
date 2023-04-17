@@ -14,7 +14,7 @@ LibreConvert is a C# library for converting Office documents to a wide range of 
 
 * Portable Document Format (PDF)
 * HyperText Markup Language (HTML)
-* Joint Photographic Experts Group (JPEG~~)~~
+* Joint Photographic Experts Group (JPEG)
 * Portable Network Graphics (PNG)
 * Scalable Vector Graphics (SVG)
 * Tagged Image File Format (TIFF)
