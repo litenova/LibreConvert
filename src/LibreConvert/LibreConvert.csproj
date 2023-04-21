@@ -10,4 +10,30 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Reference Include="cli_basetypes">
+            <HintPath>cli\cli_basetypes.dll</HintPath>
+        </Reference>
+        <Reference Include="cli_cppuhelper">
+            <HintPath>cli\cli_cppuhelper.dll</HintPath>
+        </Reference>
+        <Reference Include="cli_oootypes">
+            <HintPath>cli\cli_oootypes.dll</HintPath>
+        </Reference>
+        <Reference Include="cli_ure">
+            <HintPath>cli\cli_ure.dll</HintPath>
+        </Reference>
+        <Reference Include="cli_uretypes">
+            <HintPath>cli\cli_uretypes.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Uno\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Uno\XComponentContextCreator.cs" />
+    </ItemGroup>
+
 </Project>

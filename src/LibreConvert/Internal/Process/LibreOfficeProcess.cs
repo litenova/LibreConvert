@@ -19,7 +19,7 @@ internal class LibreOfficeProcess : ILibreOfficeProcess
     {
         var installPath = LibreOfficeSettings.InstallPath;
 
-        _libreOfficeProcess = new System.Diagnostics.Process()
+        _libreOfficeProcess = new System.Diagnostics.Process
         {
             StartInfo = new ProcessStartInfo(installPath)
             {
