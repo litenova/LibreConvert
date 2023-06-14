@@ -9,7 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="LibreConvert" Version="1.0.0-alpha.2" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
     
